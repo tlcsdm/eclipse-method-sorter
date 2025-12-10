@@ -303,16 +303,16 @@ version(s), and exceptions or additional permissions here}.&quot;
       <import plugin="org.eclipse.core.runtime" version="3.5.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.resources"/>
       <import plugin="org.eclipse.ui" version="3.5.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.ui.workbench.texteditor"/>
       <import plugin="org.eclipse.text"/>
       <import plugin="org.eclipse.jface"/>
-      <import plugin="org.eclipse.jface.text"/>
       <import plugin="org.eclipse.jdt"/>
       <import plugin="org.eclipse.jdt.ui"/>
-      <import plugin="org.eclipse.jdt.ui.source"/>
       <import plugin="org.eclipse.jdt.core"/>
       <import plugin="org.eclipse.ui.ide"/>
-      <import plugin="slf4j.api"/>
+      <import plugin="org.eclipse.osgi"/>
+      <import plugin="org.slf4j.api"/>
+      <import plugin="ch.qos.logback.core"/>
+      <import plugin="ch.qos.logback.classic"/>
       <import plugin="org.eclipse.jdt.core.manipulation"/>
    </requires>
 
