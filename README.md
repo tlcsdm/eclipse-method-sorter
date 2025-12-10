@@ -2,12 +2,11 @@
 
 This plugin provides techniques to sort methods in Java-classes, aiming to increase the readability of the source code.
 
-## Use  
-1. Via Eclipse Content Assist  
-Press Ctrl + Space (Content Assist) inside the parentheses.
+## Use
 
-2. Using the Shortcut Key  
-Place the cursor inside a method call or on the method name and then press Ctrl + Alt + O
+- To sort methods in the active Java editor: open a Java source file and choose Source → Sort Methods... from the main menu (or right-click in the editor and use the Source context menu).
+- To sort multiple items at once: select one or more compilation units, a package, or a project in the Package Explorer (or Project Explorer), then run Source → Sort Methods... — the plugin will process the selected elements recursively.
+- Preferences: configure behavior in Window → Preferences → Java Method Sorter.
 
 ## History
 Fork of [Clean-Code-Method-Sorter](https://github.com/parzonka/Clean-Code-Method-Sorter) on Github.
