@@ -312,8 +312,6 @@ version(s), and exceptions or additional permissions here}.&quot;
       <import plugin="org.eclipse.jdt.ui.source"/>
       <import plugin="org.eclipse.jdt.core"/>
       <import plugin="org.eclipse.ui.ide"/>
-      <import plugin="ch.qos.logback.core"/>
-      <import plugin="ch.qos.logback.classic"/>
       <import plugin="slf4j.api"/>
       <import plugin="org.eclipse.jdt.core.manipulation"/>
    </requires>
