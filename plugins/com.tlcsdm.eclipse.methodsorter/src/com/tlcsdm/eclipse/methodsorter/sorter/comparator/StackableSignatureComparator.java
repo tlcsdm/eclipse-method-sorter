@@ -57,6 +57,7 @@ public class StackableSignatureComparator implements Comparator<Signature> {
 		this.comparators = new ArrayList<Comparator<Signature>>();
 	}
 
+	@SafeVarargs
 	public StackableSignatureComparator(Set<Signature> knownStrings, Comparator<Signature>... comparators) {
 		super();
 		this.knownSignatures = knownStrings;

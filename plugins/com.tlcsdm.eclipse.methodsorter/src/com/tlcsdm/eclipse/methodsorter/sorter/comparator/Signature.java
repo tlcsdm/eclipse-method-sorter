@@ -50,6 +50,7 @@ public class Signature implements Comparable<Signature> {
 		this.methodSignature = getInitializerSignature(i);
 	}
 
+	@SuppressWarnings("restriction")
 	public static String getMethodSignature(MethodDeclaration method) {
 
 		final StringBuilder sb = new StringBuilder();

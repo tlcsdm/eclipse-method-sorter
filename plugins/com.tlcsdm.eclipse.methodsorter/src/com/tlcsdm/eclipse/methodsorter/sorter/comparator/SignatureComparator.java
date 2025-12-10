@@ -43,13 +43,14 @@ public class SignatureComparator implements Comparator<Signature> {
 	public SignatureComparator(Map<Signature, Integer> signature2position) {
 		super();
 		this.sig2order = new HashMap<Signature, Double>();
-		for (final Signature key : signature2position.keySet())
-			this.sig2order.put(key, new Double(signature2position.get(key)));
+		for (final Signature key : signature2position.keySet()) {
+			this.sig2order.put(key, Double.valueOf(signature2position.get(key)));
+		}
 		this.defaultSortPositionFlag = false;
 	}
 
 	public void put(String signature, int order) {
-		this.sig2order.put(new Signature(signature), new Double(order));
+		this.sig2order.put(new Signature(signature), Double.valueOf(order));
 	}
 
 	public void put(String signature, double order) {
@@ -61,7 +62,7 @@ public class SignatureComparator implements Comparator<Signature> {
 	}
 
 	public void put(Signature signature, int order) {
-		this.sig2order.put(signature, new Double(order));
+		this.sig2order.put(signature, Double.valueOf(order));
 	}
 
 	@Override

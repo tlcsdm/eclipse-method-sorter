@@ -35,6 +35,7 @@ public class Utils {
 		return buffer.toString();
 	}
 
+	@SafeVarargs
 	public static <T> List<T> list(T... objects) {
 		final List<T> result = new ArrayList<T>();
 		for (final T t : objects)

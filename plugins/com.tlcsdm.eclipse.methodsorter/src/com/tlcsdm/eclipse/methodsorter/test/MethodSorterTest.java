@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
 
+@SuppressWarnings("unused")
 public class MethodSorterTest {
 
 	private String name;

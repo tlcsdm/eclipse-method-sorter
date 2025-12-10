@@ -100,7 +100,7 @@ public class CleanCodeMethodSorter implements IMethodSorter {
 
 		final Comparator<BodyDeclaration> comparator = getBodyDeclarationComparator(signatureComparator);
 		try {
-			CompilationUnitSorter.sort(AST.JLS3, cu, null, comparator, 0, null);
+			CompilationUnitSorter.sort(AST.getJLSLatest(), cu, null, comparator, 0, null);
 		} catch (final JavaModelException e) {
 			throw new RuntimeException(e);
 		}

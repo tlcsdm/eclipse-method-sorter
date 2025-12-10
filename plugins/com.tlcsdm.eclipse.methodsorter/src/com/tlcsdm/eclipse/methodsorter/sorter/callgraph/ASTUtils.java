@@ -36,7 +36,7 @@ public class ASTUtils {
 	}
 
 	public static ASTNode getAST(ICompilationUnit compilationUnit, IJavaProject project) {
-		final ASTParser parser = ASTParser.newParser(AST.JLS3);
+		final ASTParser parser = ASTParser.newParser(AST.getJLSLatest());
 		parser.setKind(ASTParser.K_COMPILATION_UNIT);
 		parser.setSource(compilationUnit);
 		parser.setResolveBindings(true);
@@ -53,7 +53,7 @@ public class ASTUtils {
 	 * @return
 	 */
 	public static ASTNode getAST(ICompilationUnit compilationUnit) {
-		final ASTParser parser = ASTParser.newParser(AST.JLS3);
+		final ASTParser parser = ASTParser.newParser(AST.getJLSLatest());
 		parser.setKind(ASTParser.K_COMPILATION_UNIT);
 		parser.setSource(compilationUnit);
 		parser.setResolveBindings(true);
@@ -68,6 +68,7 @@ public class ASTUtils {
 	 * @param workbenchWindow
 	 * @return the cu in the editor
 	 */
+	@SuppressWarnings("restriction")
 	public static ICompilationUnit getCompilationUnit(IWorkbenchWindow workbenchWindow) {
 		CompilationUnitEditor cuEditor;
 		final IWorkbench workbench = workbenchWindow.getWorkbench();

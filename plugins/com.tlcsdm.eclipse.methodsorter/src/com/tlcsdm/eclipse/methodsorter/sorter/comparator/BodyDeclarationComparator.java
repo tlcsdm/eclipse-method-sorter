@@ -40,10 +40,12 @@ public class BodyDeclarationComparator implements Comparator<BodyDeclaration> {
 
 	final private static Logger logger = LoggerFactory.getLogger(BodyDeclarationComparator.class);
 
+	@SuppressWarnings("restriction")
 	private final MembersOrderPreferenceCache fMemberOrderCache;
 	private final Comparator<Signature> methodDeclarationComparator;
 	private final Set<Signature> knownMethodSignatures;
 
+	@SuppressWarnings("restriction")
 	public BodyDeclarationComparator(Comparator<Signature> methodDeclarationComparator,
 			Set<Signature> knownMethodSignatures) {
 		this.fMemberOrderCache = JavaPlugin.getDefault().getMemberOrderPreferenceCache();
@@ -173,6 +175,7 @@ public class BodyDeclarationComparator implements Comparator<BodyDeclaration> {
 		throw new IllegalStateException();
 	}
 
+	@SuppressWarnings("restriction")
 	private int getMemberCategory(int kind) {
 		return this.fMemberOrderCache.getCategoryIndex(kind);
 	}
