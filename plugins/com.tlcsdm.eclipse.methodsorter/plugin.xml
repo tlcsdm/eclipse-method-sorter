@@ -16,8 +16,8 @@
             class="com.tlcsdm.eclipse.methodsorter.preferences.PreferenceInitializer">
       </initializer>
 </extension>
-   
-<!-- Menus -->
+
+	<!-- Menus -->
 <extension
       point="org.eclipse.ui.menus">
     
@@ -44,7 +44,7 @@
    	   
 </extension>
 
-<!-- Add to Source Menu -->
+	<!-- Add to Source Menu -->
 <extension point="org.eclipse.ui.menus">
     <menuContribution
         locationURI="menu:org.eclipse.jdt.ui.source.menu?after=additions">
@@ -64,7 +64,7 @@
     </menuContribution>
 </extension>
 
-<!-- Commands -->
+	<!-- Commands -->
 <extension
     	point="org.eclipse.ui.commands">
    	<command
