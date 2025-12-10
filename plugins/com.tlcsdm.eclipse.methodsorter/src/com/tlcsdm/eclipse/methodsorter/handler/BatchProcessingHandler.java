@@ -24,9 +24,9 @@ import org.eclipse.jdt.internal.core.CompilationUnit;
 import org.eclipse.jdt.internal.core.JavaProject;
 import org.eclipse.jdt.internal.core.PackageFragment;
 import org.eclipse.jdt.internal.core.PackageFragmentRoot;
-import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.handlers.HandlerUtil;
 
@@ -43,7 +43,6 @@ public class BatchProcessingHandler extends AbstractHandler {
 
 	private IMethodSorter fMethodSorter;
 	protected int sortedClassesCount;
-	private ExecutionEvent event;
 
 	public BatchProcessingHandler() {
 		super();
@@ -58,7 +57,6 @@ public class BatchProcessingHandler extends AbstractHandler {
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 
 		sortedClassesCount = 0;
-		this.event = event;
 
 		ISelection currentSelection = HandlerUtil.getCurrentSelection(event);
 		if (currentSelection instanceof IStructuredSelection) {
@@ -72,8 +70,9 @@ public class BatchProcessingHandler extends AbstractHandler {
 			sort(cu);
 		}
 
-		MessageDialog.openInformation(HandlerUtil.getActiveWorkbenchWindow(event).getShell(), "Java Method Sorter",
-				getMessage());
+		// Show non-blocking popup (manual close or auto-close after 5s)
+		NotificationPopup.show(HandlerUtil.getActiveWorkbenchWindow(event).getShell(), "Java Method Sorter",
+				getMessage(), 5000);
 
 		return null;
 	}
@@ -104,6 +103,7 @@ public class BatchProcessingHandler extends AbstractHandler {
 	 * @param elements
 	 * @throws ExecutionException
 	 */
+	@SuppressWarnings("restriction")
 	private void sort(IJavaElement[] elements) throws ExecutionException {
 
 		for (IJavaElement iJavaElement : elements) {
@@ -121,9 +121,10 @@ public class BatchProcessingHandler extends AbstractHandler {
 				sort((JavaProject) iJavaElement);
 
 			} else {
-				MessageDialog.openInformation(HandlerUtil.getActiveWorkbenchWindow(event).getShell(),
-						"Java Method Sorter",
-						iJavaElement.getClass().getCanonicalName() + "\n" + iJavaElement.getElementName());
+				// Show popup using active shell; popup auto-closes after 5s but also has a
+				// Close button
+				NotificationPopup.show(Display.getDefault().getActiveShell(), "Java Method Sorter",
+						iJavaElement.getClass().getCanonicalName() + "\n" + iJavaElement.getElementName(), 5000);
 			}
 		}
 	}
@@ -136,6 +137,7 @@ public class BatchProcessingHandler extends AbstractHandler {
 		}
 	}
 
+	@SuppressWarnings("restriction")
 	private void sort(PackageFragment packageFragment) throws ExecutionException {
 		try {
 			sort(packageFragment.getCompilationUnits());
@@ -144,6 +146,7 @@ public class BatchProcessingHandler extends AbstractHandler {
 		}
 	}
 
+	@SuppressWarnings("restriction")
 	private void sort(IJavaProject iJavaElement) throws ExecutionException {
 		try {
 			for (IPackageFragmentRoot root : iJavaElement.getAllPackageFragmentRoots()) {
