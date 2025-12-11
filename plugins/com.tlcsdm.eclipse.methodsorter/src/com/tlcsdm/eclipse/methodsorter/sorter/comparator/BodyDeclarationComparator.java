@@ -20,7 +20,6 @@ import org.eclipse.jdt.core.dom.Initializer;
 import org.eclipse.jdt.core.dom.MethodDeclaration;
 import org.eclipse.jdt.core.dom.Modifier;
 import org.eclipse.jdt.core.util.CompilationUnitSorter;
-import org.eclipse.jdt.internal.corext.codemanipulation.SortMembersOperation.DefaultJavaElementComparator;
 import org.eclipse.jdt.internal.ui.JavaPlugin;
 import org.eclipse.jdt.internal.ui.preferences.MembersOrderPreferenceCache;
 import org.slf4j.Logger;
@@ -32,7 +31,8 @@ import org.slf4j.LoggerFactory;
  * pre-calculated and passed at instantiation. All other BodyDeclarations are
  * tried to be sorted preserving their old relative order.
  * <p>
- * Based on {@link DefaultJavaElementComparator}.
+ * Based on
+ * {@link org.eclipse.jdt.internal.corext.codemanipulation.DefaultJavaElementComparator}.
  *
  * @author Mateusz Parzonka
  */

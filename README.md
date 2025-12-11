@@ -8,6 +8,10 @@ This plugin provides techniques to sort methods in Java-classes, aiming to incre
 - To sort multiple items at once: select one or more compilation units, a package, or a project in the Package Explorer (or Project Explorer), then run Source → Sort Methods... — the plugin will process the selected elements recursively.
 - Preferences: configure behavior in Window → Preferences → Java Method Sorter.
 
+<img src="demo.gif" alt="demo" title="demo"/>
+
+<img src="pref.png" alt="pref" title="pref"/>
+
 ## History
 Fork of [Clean-Code-Method-Sorter](https://github.com/parzonka/Clean-Code-Method-Sorter) on Github.
 
