@@ -39,7 +39,7 @@ mvn clean org.eclipse.tycho:tycho-versions-plugin:set-version -DnewVersion=2.0.0
   <tbody>
     <tr style="border:none;">
       <td style="vertical-align: middle; padding-top: 10px; border: none;">
-        <a href='http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=7012266' title='Drag and drop into a running Eclipse Indigo workspace to install eclipse-method-sorter'> 
+        <a href='http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=7232495' title='Drag and drop into a running Eclipse Indigo workspace to install eclipse-method-sorter'> 
           <img src='https://marketplace.eclipse.org/modules/custom/eclipsefdn/eclipsefdn_marketplace/images/btn-install.svg'/>
         </a>
       </td>
@@ -48,4 +48,5 @@ mvn clean org.eclipse.tycho:tycho-versions-plugin:set-version -DnewVersion=2.0.0
       </td>
     </tr>
   </tbody>
+
 </table>
