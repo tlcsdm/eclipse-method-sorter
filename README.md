@@ -2,6 +2,8 @@
 
 This plugin provides techniques to sort methods in Java-classes, aiming to increase the readability of the source code.
 
+Now Support Eclipse 2024-06 and later, Mac OS X, Linux (with nautilus) and Windows.
+
 ## Use
 
 - To sort methods in the active Java editor: open a Java source file and choose Source → Sort Methods... from the main menu (or right-click in the editor and use the Source context menu).
@@ -50,3 +52,4 @@ mvn clean org.eclipse.tycho:tycho-versions-plugin:set-version -DnewVersion=2.0.0
   </tbody>
 
 </table>
+
