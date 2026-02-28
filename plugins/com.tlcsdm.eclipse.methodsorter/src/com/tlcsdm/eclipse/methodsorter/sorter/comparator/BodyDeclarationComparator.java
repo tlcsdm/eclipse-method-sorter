@@ -182,7 +182,7 @@ public class BodyDeclarationComparator implements Comparator<BodyDeclaration> {
 
 	@Override
 	public String toString() {
-		final String LF = System.getProperty("line.separator");
+		final String LF = System.lineSeparator();
 		final StringBuilder sb = new StringBuilder();
 		sb.append("Final ordering of [" + this.knownMethodSignatures.size() + "] known signatures:").append(LF);
 		final List<Signature> orderedSignatures = new ArrayList<Signature>();

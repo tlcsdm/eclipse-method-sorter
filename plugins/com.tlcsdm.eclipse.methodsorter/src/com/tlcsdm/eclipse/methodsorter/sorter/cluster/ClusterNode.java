@@ -27,13 +27,17 @@ public class ClusterNode extends CallGraphNode {
 	private List<CallGraphNode> clusteredNodes;
 
 	public ClusterNode(List<CallGraphNode> callGraphNodes) {
-		super(callGraphNodes.get(0).getSignature());
+		super(validateAndGetFirst(callGraphNodes).getSignature());
 		this.clusteredNodes = callGraphNodes;
-		if (callGraphNodes.size() < 1)
-			throw new IllegalArgumentException("A clustered call graph node should comprise at least 1 nodes.");
 		this.callers = new ArrayList<CallGraphNode>();
 		this.callees = new ArrayList<CallGraphNode>();
 		mergeCallersAndCallees(callGraphNodes);
+	}
+
+	private static CallGraphNode validateAndGetFirst(List<CallGraphNode> callGraphNodes) {
+		if (callGraphNodes == null || callGraphNodes.isEmpty())
+			throw new IllegalArgumentException("A clustered call graph node must contain at least one node.");
+		return callGraphNodes.get(0);
 	}
 
 	/**

@@ -200,9 +200,9 @@ public class ClusterGraphExtractor extends TopLevelASTVisitor {
 	 * @return
 	 */
 	private boolean matchingGetterAndSetter(MethodDeclaration getter, MethodDeclaration setter) {
-		if (getter.getName().getIdentifier().length() < 3)
+		if (getter.getName().getIdentifier().length() <= 3)
 			return false;
-		if (setter.getName().getIdentifier().length() < 3)
+		if (setter.getName().getIdentifier().length() <= 3)
 			return false;
 		final String getterName = getter.getName().getIdentifier().substring(3);
 		final String setterName = setter.getName().getIdentifier().substring(3);

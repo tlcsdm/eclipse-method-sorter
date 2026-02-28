@@ -167,19 +167,20 @@ public class BatchProcessingHandler extends AbstractHandler {
 	private void sort(ICompilationUnit cu) throws ExecutionException {
 		try {
 			cu.becomeWorkingCopy(null);
-			fMethodSorter.sort(cu);
-			sortedClassesCount++;
-			cu.commitWorkingCopy(true, null);
-			cu.discardWorkingCopy();
+			try {
+				fMethodSorter.sort(cu);
+				sortedClassesCount++;
+				cu.commitWorkingCopy(true, null);
+			} finally {
+				cu.discardWorkingCopy();
+			}
 		} catch (JavaModelException e) {
 			throw new ExecutionException(e.getMessage());
 		}
 	}
 
 	protected String getMessage() {
-		StringBuilder sb = new StringBuilder();
-		sb.append("Methods sorted in " + sortedClassesCount + " classes.");
-		return sb.toString();
+		return "Methods sorted in " + sortedClassesCount + " classes.";
 	}
 
 }
