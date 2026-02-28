@@ -98,7 +98,7 @@ public class SortElementsOperation extends JavaModelOperation {
 		final Object property = node.getProperty(CONTAINS_MALFORMED_NODES);
 		if (property == null)
 			return false;
-		return ((Boolean) property).booleanValue();
+		return (Boolean) property;
 	}
 
 	protected boolean isMalformed(ASTNode node) {

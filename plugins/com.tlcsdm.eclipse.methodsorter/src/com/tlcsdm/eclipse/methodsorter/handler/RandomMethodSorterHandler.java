@@ -12,7 +12,7 @@ import com.tlcsdm.eclipse.methodsorter.sorter.IMethodSorter;
 import com.tlcsdm.eclipse.methodsorter.sorter.RandomMethodSorter;
 
 /**
- * Shuffles methods randomly. TODO to be deleted in a final version.
+ * Shuffles methods randomly.
  *
  * @author Mateusz Parzonka
  *

@@ -80,7 +80,7 @@ public class ComparatorBuilder {
 	}
 
 	private static String logCallGraph(List<? extends CallGraphNode> aCallGraph) {
-		final String LF = System.getProperty("line.separator");
+		final String LF = System.lineSeparator();
 		final StringBuilder sb = new StringBuilder();
 		for (final CallGraphNode callGraphNode : aCallGraph) {
 			sb.append(callGraphNode.toString()).append(LF);

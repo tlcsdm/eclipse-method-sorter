@@ -17,6 +17,7 @@ import java.util.Set;
 
 import org.eclipse.jdt.core.ICompilationUnit;
 import org.eclipse.jdt.core.JavaModelException;
+import org.eclipse.jdt.core.dom.AST;
 import org.eclipse.jdt.core.dom.ASTNode;
 import org.eclipse.jdt.core.dom.BodyDeclaration;
 import org.eclipse.jdt.core.dom.MethodDeclaration;
@@ -45,7 +46,7 @@ public class RandomMethodSorter implements IMethodSorter {
 	public void sort(ICompilationUnit cu) {
 
 		try {
-			CompilationUnitSorter.sort(3, cu, null, createComparator(cu), 0, null);
+			CompilationUnitSorter.sort(AST.getJLSLatest(), cu, null, createComparator(cu), 0, null);
 		} catch (final JavaModelException e) {
 			throw new RuntimeException(e);
 		}

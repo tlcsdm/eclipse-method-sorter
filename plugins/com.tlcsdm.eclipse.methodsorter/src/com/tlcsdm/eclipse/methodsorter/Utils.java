@@ -21,7 +21,7 @@ import java.util.List;
  */
 public class Utils {
 
-	public Utils() {
+	private Utils() {
 		// not meant to be instantiated
 	}
 
@@ -29,7 +29,7 @@ public class Utils {
 		if (strings.isEmpty())
 			return "";
 		final Iterator<String> iter = strings.iterator();
-		final StringBuffer buffer = new StringBuffer(iter.next());
+		final StringBuilder buffer = new StringBuilder(iter.next());
 		while (iter.hasNext())
 			buffer.append(delimiter).append(iter.next());
 		return buffer.toString();
