@@ -36,7 +36,7 @@ public class ClusterNode extends CallGraphNode {
 
 	private static CallGraphNode validateAndGetFirst(List<CallGraphNode> callGraphNodes) {
 		if (callGraphNodes == null || callGraphNodes.isEmpty())
-			throw new IllegalArgumentException("A clustered call graph node should comprise at least 1 node.");
+			throw new IllegalArgumentException("A clustered call graph node must contain at least one node.");
 		return callGraphNodes.get(0);
 	}
 
